@@ -1,8 +1,6 @@
 name: Default Workflow
 
 on:
-  merge:
-    branches: [ "master" ]
   push:
     branches: [ "master" ]
 

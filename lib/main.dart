@@ -28,7 +28,6 @@ class CurrencyPage extends StatefulWidget {
 }
 
 class _CurrencyPageState extends State<CurrencyPage> {
-  //teste2
   TextEditingController _realValue = TextEditingController();
   TextEditingController _dollarValue = TextEditingController();
   TextEditingController _euroValue = TextEditingController();

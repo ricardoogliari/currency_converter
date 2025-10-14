@@ -7,22 +7,22 @@ on:
     branches: [ "master" ]
 
   jobs:
-  flutter_job:
+    flutter_job:
 
-    # The machine, we can also use windows-latest or ubuntu-latest
-    # We are choosing macos-latest because we will be also building for iOS
-    runs-on: macos-latest
+      # The machine, we can also use windows-latest or ubuntu-latest
+      # We are choosing macos-latest because we will be also building for iOS
+      runs-on: macos-latest
 
-    steps:
+      steps:
 
-      # Clones the project on the machine
-      - uses: actions/checkout@v4
+        # Clones the project on the machine
+        - uses: actions/checkout@v4
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
+        - name: Setup Flutter
+          uses: subosito/flutter-action@v2
+          with:
+            channel: 'stable'
 
-      # Fetches proj dependencies from pub
-      - name: Install dependencies
-        run: flutter pub get
+        # Fetches proj dependencies from pub
+        - name: Install dependencies
+          run: flutter pub get

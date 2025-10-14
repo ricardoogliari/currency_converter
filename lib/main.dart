@@ -40,24 +40,34 @@ class _CurrencyPageState extends State<CurrencyPage> {
         title: Text('Currency Converter'),
       ),
       body: Form(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            children: <Widget>[
-              TextField(
-                controller: _realValue,
-                onChanged: (value) {
-                  double realValue = double.parse(value);
-                  double dollarValue = realValue / 5.48;
-                  double euroValue = realValue / 6.36;
-                  _dollarValue.text = dollarValue.toStringAsFixed(2);
-                  _euroValue.text = euroValue.toStringAsFixed(2);
-                },
+        child: Column(
+          children: <Widget>[
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Real:',
               ),
-              TextField(controller: _dollarValue),
-              TextField(controller: _euroValue),
-            ],
-          ),
+              controller: _realValue,
+              onChanged: (value) {
+                double realValue = double.parse(value);
+                double dollarValue = realValue / 5.48;
+                double euroValue = realValue / 6.36;
+                _dollarValue.text = dollarValue.toStringAsFixed(2);
+                _euroValue.text = euroValue.toStringAsFixed(2);
+              },
+            ),
+            TextField(
+              controller: _dollarValue,
+              decoration: InputDecoration(
+                labelText: 'Dolar:',
+              ),
+              ),
+            TextField(
+             decoration: InputDecoration(
+                labelText: 'Euro:',
+              ),
+              controller: _euroValue
+            ),
+          ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );

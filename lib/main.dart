@@ -41,7 +41,7 @@ class _CurrencyPageState extends State<CurrencyPage> {
       ),
       body: Form(
         child: Padding(
-          padding: const EdgeInsets.all(16.0), // Define o padding em todos os lados
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: <Widget>[
               TextField(

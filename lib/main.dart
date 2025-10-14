@@ -43,6 +43,9 @@ class _CurrencyPageState extends State<CurrencyPage> {
         child: Column(
           children: <Widget>[
             TextField(
+              decoration: InputDecoration(
+                labelText: 'Real:',
+              ),
               controller: _realValue,
               onChanged: (value) {
                 double realValue = double.parse(value);
@@ -52,8 +55,18 @@ class _CurrencyPageState extends State<CurrencyPage> {
                 _euroValue.text = euroValue.toStringAsFixed(2);
               },
             ),
-            TextField(controller: _dollarValue),
-            TextField(controller: _euroValue),
+            TextField(
+              controller: _dollarValue,
+              decoration: InputDecoration(
+                labelText: 'Dolar:',
+              ),
+              ),
+            TextField(
+             decoration: InputDecoration(
+                labelText: 'Euro:',
+              ),
+              controller: _euroValue
+            ),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

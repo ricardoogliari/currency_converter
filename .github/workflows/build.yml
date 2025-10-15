@@ -24,3 +24,21 @@ jobs:
       # Fetches proj dependencies from pub
       - name: Install dependencies
         run: flutter pub get
+
+      - name: Build flutter web
+        run: flutter build web --release
+
+      - name: Set up node.js
+        uses: actions/setup-node@v3
+        with: 
+          node-version: '18'
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Deploy to Firebase Hosting
+        run: firebase deploy --only hosting --project currencycv-15ac0
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+      

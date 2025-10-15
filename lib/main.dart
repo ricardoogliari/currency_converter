@@ -1,6 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized;
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -43,9 +47,7 @@ class _CurrencyPageState extends State<CurrencyPage> {
         child: Column(
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(
-                labelText: 'Real:',
-              ),
+              decoration: InputDecoration(labelText: 'Real:'),
               controller: _realValue,
               onChanged: (value) {
                 double realValue = double.parse(value);
@@ -57,15 +59,11 @@ class _CurrencyPageState extends State<CurrencyPage> {
             ),
             TextField(
               controller: _dollarValue,
-              decoration: InputDecoration(
-                labelText: 'Dolar:',
-              ),
-              ),
+              decoration: InputDecoration(labelText: 'Dolar:'),
+            ),
             TextField(
-             decoration: InputDecoration(
-                labelText: 'Euro:',
-              ),
-              controller: _euroValue
+              decoration: InputDecoration(labelText: 'Euro:'),
+              controller: _euroValue,
             ),
           ],
         ),
